@@ -7,6 +7,7 @@ use Phpactor\Container\PhpactorContainer;
 use Phpactor\Extension\Console\ConsoleExtension;
 use Phpactor\Extension\ExtensionManager\ExtensionManagerExtension;
 use Phpactor\Extension\ExtensionManager\Tests\TestCase;
+use Phpactor\Extension\Logger\LoggingExtension;
 use Phpactor\FilePathResolverExtension\FilePathResolverExtension;
 
 class IntegrationTestCase extends TestCase
@@ -17,6 +18,7 @@ class IntegrationTestCase extends TestCase
             ExtensionManagerExtension::class,
             ConsoleExtension::class,
             FilePathResolverExtension::class,
+            LoggingExtension::class,
         ], array_merge([
             ExtensionManagerExtension::PARAM_VENDOR_DIR => $this->workspace->path('vendordor'),
             ExtensionManagerExtension::PARAM_EXTENSION_VENDOR_DIR => $this->workspace->path('vendordor-ext'),
