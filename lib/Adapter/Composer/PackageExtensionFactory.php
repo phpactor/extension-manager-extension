@@ -24,7 +24,7 @@ class PackageExtensionFactory
         return new Extension(
             $package->getName(),
             $package->getFullPrettyVersion(),
-            $package->getExtra()[self::EXTRA_EXTENSION_CLASS],
+            (array)$package->getExtra()[self::EXTRA_EXTENSION_CLASS],
             $package->getDescription() ?: '',
             $this->extractDependencies($package),
             $state

@@ -16,9 +16,9 @@ class ExtensionListHandlerTest extends TestCase
     {
         $repository = $this->prophesize(ExtensionRepository::class);
         $repository->extensions()->willReturn(new Extensions([
-            new Extension('one', 'dev-xxx', 'class', 'One', [], ExtensionState::STATE_PRIMARY),
-            new Extension('two', 'dev-yyy', 'class', 'Two', [], ExtensionState::STATE_SECONDARY),
-            new Extension('three', 'dev-yyy', 'class', 'Two'),
+            new Extension('one', 'dev-xxx', ['class'], 'One', [], ExtensionState::STATE_PRIMARY),
+            new Extension('two', 'dev-yyy', ['class'], 'Two', [], ExtensionState::STATE_SECONDARY),
+            new Extension('three', 'dev-yyy', ['class'], 'Two'),
         ]));
         $tester = new HandlerTester(new ExtensionListHandler($repository->reveal()));
         $response = $tester->handle('extension_list', []);

@@ -30,14 +30,14 @@ class Extension
     private $state;
 
     /**
-     * @var string
+     * @var array<string>
      */
-    private $className;
+    private $classNames;
 
     public function __construct(
         string $name,
         string $version,
-        string $className,
+        array $classNames,
         string $description,
         array $dependencies = [],
         int $state = ExtensionState::STATE_NOT_INSTALLED
@@ -47,7 +47,7 @@ class Extension
         $this->description = $description;
         $this->dependencies = $dependencies;
         $this->state = $state;
-        $this->className = $className;
+        $this->classNames = $classNames;
     }
 
     public function name(): string
@@ -75,8 +75,8 @@ class Extension
         return new ExtensionState($this->state);
     }
 
-    public function className(): string
+    public function classNames(): array
     {
-        return $this->className;
+        return $this->classNames;
     }
 }

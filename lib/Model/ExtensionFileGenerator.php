@@ -30,7 +30,9 @@ class ExtensionFileGenerator
         ];
 
         foreach ($extensions as $extension) {
-            $code[] = sprintf('  "\\%s",', $extension->className());
+            foreach ($extension->classNames() as $className) {
+                $code[] = sprintf('  "\\%s",', $className);
+            }
         }
 
         $code[] = '];';

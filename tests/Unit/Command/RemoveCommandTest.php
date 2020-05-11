@@ -46,8 +46,8 @@ class RemoveCommandTest extends TestCase
     public function testRemovesAnExtensionAndDependentExtensions()
     {
         $this->remover->findDependentExtensions(['foo'])->willReturn(new Extensions([
-            new Extension('bar', 'foo', 'desc', 'class'),
-            new Extension('baz', 'foo', 'desc', 'class'),
+            new Extension('bar', 'foo', ['class'], 'desc'),
+            new Extension('baz', 'foo', ['class'], 'desc'),
         ]));
 
         $this->remover->removeExtension('foo')->shouldBeCalled();
@@ -68,8 +68,8 @@ class RemoveCommandTest extends TestCase
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('primary exten');
         $this->remover->findDependentExtensions(['foo'])->willReturn(new Extensions([
-            new Extension('bar', 'foo', 'desc', 'class'),
-            new Extension('baz', 'foo', 'desc', 'class', [], ExtensionState::STATE_PRIMARY),
+            new Extension('bar', 'foo', ['class'], 'desc'),
+            new Extension('baz', 'foo', ['class'], 'desc', [], ExtensionState::STATE_PRIMARY),
         ]));
 
         $this->tester->execute([

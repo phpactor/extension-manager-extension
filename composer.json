@@ -39,5 +39,12 @@
         "branch-alias": {
             "dev-master": "0.8.x-dev"
         }
+    },
+    "scripts": {
+        "integrate": [
+            "vendor/bin/phpstan analyse",
+            "vendor/bin/php-cs-fixer fix",
+            "vendor/bin/phpunit"
+        ]
     }
 }

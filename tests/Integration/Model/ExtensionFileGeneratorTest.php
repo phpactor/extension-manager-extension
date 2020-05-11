@@ -55,8 +55,8 @@ class ExtensionFileGeneratorTest extends IntegrationTestCase
 
     public function testGenerate()
     {
-        $this->extension1->className()->willReturn(self::EXAMPLE_CLASS_NAME_1);
-        $this->extension2->className()->willReturn(self::EXAMPLE_CLASS_NAME_2);
+        $this->extension1->classNames()->willReturn([self::EXAMPLE_CLASS_NAME_1]);
+        $this->extension2->classNames()->willReturn([self::EXAMPLE_CLASS_NAME_2]);
         $this->generator->writeExtensionList(new Extensions([
             $this->extension1->reveal(),
             $this->extension2->reveal(),

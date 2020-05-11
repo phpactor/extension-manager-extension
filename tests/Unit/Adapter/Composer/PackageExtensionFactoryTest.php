@@ -36,7 +36,7 @@ class PackageExtensionFactoryTest extends TestCase
 
         $this->assertEquals(self::EXAMPLE_EXTENSION_NAME, $extension->name());
         $this->assertEquals(self::EXAMPLE_VERSION, $extension->version());
-        $this->assertEquals(self::EXAMPLE_EXTENSION_CLASS, $extension->className());
+        $this->assertEquals([self::EXAMPLE_EXTENSION_CLASS], $extension->classNames());
     }
 
     public function testExceptionOnInvalidPackageType()
