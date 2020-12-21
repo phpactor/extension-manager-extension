@@ -11,7 +11,7 @@ class ComposerExtensionRepositoryTest extends IntegrationTestCase
 {
     private $repository;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -64,7 +64,7 @@ EOT
     {
         $extensions = $this->repository->installedExtensions();
         $this->assertCount(1, $extensions);
-        $this->assertContainsOnlyInstancesOf(Extension::class, $extensions);
+        $this->assertStringContainsStringOnlyInstancesOf(Extension::class, $extensions);
     }
 
     public function testHasPackage()

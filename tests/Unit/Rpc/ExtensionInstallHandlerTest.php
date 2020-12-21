@@ -20,7 +20,7 @@ class ExtensionInstallHandlerTest extends TestCase
      */
     private $installer;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->installer = $this->prophesize(InstallerService::class);
     }

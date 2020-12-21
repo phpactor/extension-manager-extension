@@ -27,7 +27,7 @@ class DepdendentExtensionFinderTest extends TestCase
      */
     private $extension;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->repository = $this->prophesize(ExtensionRepository::class);
         $this->finder = new DependentExtensionFinder($this->repository->reveal());

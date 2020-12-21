@@ -20,7 +20,7 @@ class ComposerExtensionConfigTest extends TestCase
      */
     private $path;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->path = $this->workspace->path(self::EXAMPLE_PATH);

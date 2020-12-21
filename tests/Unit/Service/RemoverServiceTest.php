@@ -46,7 +46,7 @@ class RemoverServiceTest extends TestCase
      */
     private $configLoader;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->installer = $this->prophesize(Installer::class);
         $this->configLoader = $this->prophesize(ExtensionConfigLoader::class);

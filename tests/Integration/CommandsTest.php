@@ -15,7 +15,7 @@ class CommandsTest extends IntegrationTestCase
     private $container;
     private $finder;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->setupEnvironment();
@@ -50,7 +50,7 @@ class CommandsTest extends IntegrationTestCase
             'command' => 'extension:list',
         ]);
 
-        $this->assertContains('test/extension', $out);
+        $this->assertStringContainsString('test/extension', $out);
         $this->assertEquals(0, $exit);
     }
 

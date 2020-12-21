@@ -20,7 +20,7 @@ class InstallCommandTest extends TestCase
     private $tester;
 
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->installer = $this->prophesize(InstallerService::class);
         $this->tester = new CommandTester(new InstallCommand($this->installer->reveal()));

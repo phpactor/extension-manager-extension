@@ -55,7 +55,7 @@ class InstallerServiceTest extends TestCase
      */
     private $factory;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->installer = $this->prophesize(Installer::class);
         $this->factory = $this->prophesize(ExtensionConfigLoader::class);
