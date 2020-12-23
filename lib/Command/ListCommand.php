@@ -29,7 +29,7 @@ class ListCommand extends Command
         $this->addOption('installed', null, InputOption::VALUE_NONE, 'Only show installed packages');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $onlyInstalled = $input->getOption('installed');
         assert(is_bool($onlyInstalled));
@@ -49,6 +49,8 @@ class ListCommand extends Command
         }
         $table->render();
         $output->writeln('<comment>* core extension</>');
+
+        return 0;
     }
 
     private function formatVersion(Extension $extension): string

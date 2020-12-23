@@ -4,6 +4,7 @@
     "license": "MIT",
     "type": "phpactor-extension",
     "minimum-stability": "dev",
+    "prefer-stable":true,
     "authors": [
         {
             "name": "Daniel Leech",

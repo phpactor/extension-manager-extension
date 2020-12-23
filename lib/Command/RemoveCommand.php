@@ -25,13 +25,13 @@ class RemoveCommand extends Command
         $this->remover = $remover;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setDescription('Remove extensions');
         $this->addArgument(self::ARG_EXTENSION_NAME, InputArgument::REQUIRED|InputArgument::IS_ARRAY);
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $extensionNames = $this->resolveExtensionNamesToRemove(
             $input,
@@ -43,6 +43,8 @@ class RemoveCommand extends Command
         }
 
         $this->removeExtensions($extensionNames, $output);
+
+        return 0;
     }
 
     private function removeExtensions(array $extensions, OutputInterface $output)

@@ -20,13 +20,15 @@ class UpdateCommand extends Command
         $this->installer = $installer;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setDescription('Update extensions');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->installer->installForceUpdate();
+
+        return 0;
     }
 }

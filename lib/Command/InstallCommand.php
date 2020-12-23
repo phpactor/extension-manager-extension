@@ -28,7 +28,7 @@ class InstallCommand extends Command
         $this->addArgument('extension', InputArgument::OPTIONAL|InputArgument::IS_ARRAY);
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (count((array) $input->getArgument('extension'))) {
             try {
@@ -50,5 +50,7 @@ class InstallCommand extends Command
         }
 
         $this->installer->install();
+
+        return 0;
     }
 }
