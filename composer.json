@@ -1,10 +1,8 @@
 {
     "name": "phpactor/extension-manager-extension",
+    "type": "phpactor-extension",
     "description": "Install, remove and otherwise manage extensions",
     "license": "MIT",
-    "type": "phpactor-extension",
-    "minimum-stability": "dev",
-    "prefer-stable":true,
     "authors": [
         {
             "name": "Daniel Leech",
@@ -12,18 +10,25 @@
         }
     ],
     "require": {
-        "phpactor/container": "^1.0",
-        "phpactor/console-extension": "~0.1",
         "composer/composer": "^1.7",
-        "webmozart/path-util": "^2.3",
-        "phpactor/file-path-resolver-extension": "~0.1"
+        "phpactor/console-extension": "~0.1",
+        "phpactor/container": "^1.0",
+        "phpactor/file-path-resolver-extension": "~0.1",
+        "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "phpstan/phpstan": "~0.12.0",
-        "phpunit/phpunit": "~7.0",
-        "friendsofphp/php-cs-fixer": "~2.15.0",
+        "ergebnis/composer-normalize": "^2.0",
+        "friendsofphp/php-cs-fixer": "^2.17",
+        "phpactor/rpc-extension": "~0.1",
         "phpactor/test-utils": "^1.0",
-        "phpactor/rpc-extension": "~0.1"
+        "phpstan/phpstan": "~0.12.0",
+        "phpunit/phpunit": "~7.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.8.x-dev"
+        },
+        "phpactor.extension_class": "Phpactor\\Extension\\ExtensionManager\\ExtensionManagerExtension"
     },
     "autoload": {
         "psr-4": {
@@ -35,12 +40,8 @@
             "Phpactor\\Extension\\ExtensionManager\\Tests\\": "tests/"
         }
     },
-    "extra": {
-        "phpactor.extension_class": "Phpactor\\Extension\\ExtensionManager\\ExtensionManagerExtension",
-        "branch-alias": {
-            "dev-master": "0.8.x-dev"
-        }
-    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
         "integrate": [
             "vendor/bin/phpstan analyse",
