@@ -96,29 +96,9 @@ parameters:
 			path: lib/Command/InstallCommand.php
 
 		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\InstallCommand\\:\\:execute\\(\\) should return int but return statement is missing\\.$#"
-			count: 1
-			path: lib/Command/InstallCommand.php
-
-		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\ListCommand\\:\\:configure\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: lib/Command/ListCommand.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\ListCommand\\:\\:execute\\(\\) should return int but return statement is missing\\.$#"
-			count: 1
-			path: lib/Command/ListCommand.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\RemoveCommand\\:\\:configure\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Command/RemoveCommand.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\RemoveCommand\\:\\:execute\\(\\) should return int but return statement is missing\\.$#"
-			count: 1
-			path: lib/Command/RemoveCommand.php
 
 		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\RemoveCommand\\:\\:removeExtensions\\(\\) has no return typehint specified\\.$#"
@@ -134,16 +114,6 @@ parameters:
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\RemoveCommand\\:\\:resolveExtensionNamesToRemove\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: lib/Command/RemoveCommand.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\UpdateCommand\\:\\:configure\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Command/UpdateCommand.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\UpdateCommand\\:\\:execute\\(\\) should return int but return statement is missing\\.$#"
-			count: 1
-			path: lib/Command/UpdateCommand.php
 
 		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\EventSubscriber\\\\PostInstallSubscriber\\:\\:getSubscribedEvents\\(\\) return type has no value type specified in iterable type array\\.$#"
