@@ -39,7 +39,7 @@ class ExtensionFileGeneratorTest extends IntegrationTestCase
      */
     private $extension2;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

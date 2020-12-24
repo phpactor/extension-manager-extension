@@ -21,7 +21,7 @@ class ListCommandTest extends TestCase
      */
     private $lister;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->lister = $this->prophesize(ExtensionLister::class);
         $this->tester = new CommandTester(new ListCommand($this->lister->reveal()));

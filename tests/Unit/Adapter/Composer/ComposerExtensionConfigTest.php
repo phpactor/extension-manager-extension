@@ -20,7 +20,7 @@ class ComposerExtensionConfigTest extends TestCase
      */
     private $path;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->path = $this->workspace->path(self::EXAMPLE_PATH);
@@ -46,11 +46,10 @@ class ComposerExtensionConfigTest extends TestCase
     {
         $this->config->require('foo', 'bar');
         $this->config->write();
-        $this->assertArraySubset([
-            'require' => [
-                'foo' => 'bar'
-            ]
-        ], $this->render());
+        $this->assertArrayHasKey('require', $this->render());
+        $this->assertEquals([
+            'foo' => 'bar'
+        ], $this->render()['require']);
     }
 
     public function testRevertsToOriginalConfig()
@@ -59,7 +58,7 @@ class ComposerExtensionConfigTest extends TestCase
         $this->config->write();
         $this->config->revert();
 
-        $this->assertArraySubset([], $this->render());
+        $this->assertTrue(array_intersect([], $this->render()) === []);
     }
 
     public function testAddsRepositories()
