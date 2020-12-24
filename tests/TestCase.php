@@ -12,13 +12,13 @@ class TestCase extends PHPUnitTestCase
      */
     protected $workspace;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->workspace = Workspace::create(__DIR__ . '/Workspace');
         $this->workspace->reset();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
 //        $this->workspace->reset();
     }

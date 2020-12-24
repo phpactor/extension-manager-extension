@@ -24,7 +24,7 @@ class RemoveCommandTest extends TestCase
     private $tester;
 
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->remover = $this->prophesize(RemoverService::class);
         $this->tester = new CommandTester(new RemoveCommand($this->remover->reveal()));

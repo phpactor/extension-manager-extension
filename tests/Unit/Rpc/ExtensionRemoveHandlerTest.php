@@ -20,7 +20,7 @@ class ExtensionRemoveHandlerTest extends TestCase
      */
     private $remover;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->remover = $this->prophesize(RemoverService::class);
     }

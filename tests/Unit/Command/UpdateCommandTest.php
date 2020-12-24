@@ -20,7 +20,7 @@ class UpdateCommandTest extends TestCase
     private $tester;
 
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->installer = $this->prophesize(InstallerService::class);
         $this->tester = new CommandTester(new UpdateCommand($this->installer->reveal()));

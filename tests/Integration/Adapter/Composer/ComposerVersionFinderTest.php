@@ -13,7 +13,7 @@ class ComposerVersionFinderTest extends IntegrationTestCase
      */
     private $finder;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->setupEnvironment();
