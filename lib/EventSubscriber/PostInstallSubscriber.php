@@ -37,7 +37,7 @@ class PostInstallSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function handlePostPackageInstall(Event $event)
+    public function handlePostPackageInstall(Event $event): void
     {
         $repository = $event->getComposer()->getRepositoryManager()->getLocalRepository();
 

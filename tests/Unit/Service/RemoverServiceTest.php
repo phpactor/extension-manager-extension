@@ -65,7 +65,7 @@ class RemoverServiceTest extends TestCase
         $this->extension1 = $this->prophesize(Extension::class);
     }
 
-    public function testRemoveExtension()
+    public function testRemoveExtension(): void
     {
         $this->repository->find('foobar')->willReturn($this->extension1->reveal());
         $this->extension1->state()->willReturn(new ExtensionState(ExtensionState::STATE_SECONDARY));
@@ -77,7 +77,7 @@ class RemoverServiceTest extends TestCase
         $this->service->removeExtension('foobar');
     }
 
-    public function testRevertsConfigOnError()
+    public function testRevertsConfigOnError(): void
     {
         $this->repository->find('foobar')->willReturn($this->extension1->reveal());
         $this->extension1->state()->willReturn(new ExtensionState(ExtensionState::STATE_SECONDARY));
@@ -93,7 +93,7 @@ class RemoverServiceTest extends TestCase
         }
     }
 
-    public function testThrowsExceptionIfExtensionIsPrimary()
+    public function testThrowsExceptionIfExtensionIsPrimary(): void
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('is a primary');

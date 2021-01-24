@@ -27,7 +27,7 @@ class ListCommandTest extends TestCase
         $this->tester = new CommandTester(new ListCommand($this->lister->reveal()));
     }
 
-    public function testListsAllExtensions()
+    public function testListsAllExtensions(): void
     {
         $this->lister->list(false)->willReturn(new Extensions([
             new Extension('one', 'dev-xxx', ['class'], 'One'),
@@ -38,7 +38,7 @@ class ListCommandTest extends TestCase
         $this->assertEquals(0, $this->tester->getStatusCode());
     }
 
-    public function testListsInstalledExtensions()
+    public function testListsInstalledExtensions(): void
     {
         $this->lister->list(true)->willReturn(new Extensions([
             new Extension('one', 'dev-xxx', ['class'], 'One'),

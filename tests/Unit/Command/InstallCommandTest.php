@@ -26,7 +26,7 @@ class InstallCommandTest extends TestCase
         $this->tester = new CommandTester(new InstallCommand($this->installer->reveal()));
     }
 
-    public function testItCallsTheInstaller()
+    public function testItCallsTheInstaller(): void
     {
         $this->installer->install()->shouldBeCalled();
 
@@ -34,7 +34,7 @@ class InstallCommandTest extends TestCase
         $this->assertEquals(0, $this->tester->getStatusCode());
     }
 
-    public function testItInstallsASingleExtension()
+    public function testItInstallsASingleExtension(): void
     {
         $this->installer->requireExtensions(['foobar'])->shouldBeCalled();
 
@@ -46,7 +46,7 @@ class InstallCommandTest extends TestCase
         $this->assertEquals(0, $this->tester->getStatusCode());
     }
 
-    public function testItInstallsManyExtensions()
+    public function testItInstallsManyExtensions(): void
     {
         $this->installer->requireExtensions(['foobar', 'barfoo'])->shouldBeCalled();
 

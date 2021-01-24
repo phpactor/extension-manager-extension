@@ -18,27 +18,27 @@ class ComposerExtensionRepositoryTest extends IntegrationTestCase
         $this->loadProject(
             'Extension',
             <<<'EOT'
-// File: composer.json
-{
-    "name": "test/extension",
-    "type": "phpactor-extension",
-    "extra": {
-        "phpactor.extension_class": "Foo"
-    },
-    "require": {
-        "test/library": "*"
-    }
-}
-EOT
+                // File: composer.json
+                {
+                    "name": "test/extension",
+                    "type": "phpactor-extension",
+                    "extra": {
+                        "phpactor.extension_class": "Foo"
+                    },
+                    "require": {
+                        "test/library": "*"
+                    }
+                }
+                EOT
         );
         $this->loadProject(
             'Library',
             <<<'EOT'
-// File: composer.json
-{
-    "name": "test/library"
-}
-EOT
+                // File: composer.json
+                {
+                    "name": "test/library"
+                }
+                EOT
         );
 
         /** @var InstallerService $installer */
@@ -60,20 +60,20 @@ EOT
         $installer->requireExtensions(['test/extension']);
     }
 
-    public function testReturnsAllInstalledExtensions()
+    public function testReturnsAllInstalledExtensions(): void
     {
         $extensions = $this->repository->installedExtensions();
         $this->assertCount(1, $extensions);
         $this->assertContainsOnlyInstancesOf(Extension::class, $extensions);
     }
 
-    public function testHasPackage()
+    public function testHasPackage(): void
     {
         $this->assertTrue($this->repository->has('test/extension'));
         $this->assertFalse($this->repository->has('test/foobar'));
     }
 
-    public function testThrowsExceptionWhenTryingToGetNonExistingRepository()
+    public function testThrowsExceptionWhenTryingToGetNonExistingRepository(): void
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('Could not find');

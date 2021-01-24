@@ -27,7 +27,7 @@ class ExtensionManagerExtensionTest extends TestCase
         $this->workspace->reset();
     }
 
-    public function testRegistersRpcHandlers()
+    public function testRegistersRpcHandlers(): void
     {
         $container = $this->loadContainer();
         /** @var RequestHandler $handler */

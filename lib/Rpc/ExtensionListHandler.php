@@ -27,7 +27,7 @@ class ExtensionListHandler implements Handler
         return self::NAME;
     }
 
-    public function configure(Resolver $resolver)
+    public function configure(Resolver $resolver): void
     {
     }
 
@@ -36,7 +36,7 @@ class ExtensionListHandler implements Handler
         $output = [];
         foreach ($this->repository->extensions() as $extension) {
             $output[] = sprintf(
-                "[%s] %-30s %s%s",
+                '[%s] %-30s %s%s',
                 $this->formatState($extension->state()),
                 $extension->name(),
                 $extension->description(),

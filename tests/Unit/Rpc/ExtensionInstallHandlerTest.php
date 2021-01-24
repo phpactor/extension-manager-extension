@@ -25,14 +25,14 @@ class ExtensionInstallHandlerTest extends TestCase
         $this->installer = $this->prophesize(InstallerService::class);
     }
 
-    public function testAsksForExtensionName()
+    public function testAsksForExtensionName(): void
     {
         $tester = $this->createTester();
         $response = $tester->handle('extension_install', []);
         $this->assertInstanceOf(InputCallbackResponse::class, $response);
     }
 
-    public function testInstallsExtension()
+    public function testInstallsExtension(): void
     {
         $tester = $this->createTester();
         $this->installer->requireExtensions([ self::EXAMPLE_EXTENSION_NAME ])->shouldBeCalled();
@@ -42,7 +42,7 @@ class ExtensionInstallHandlerTest extends TestCase
         $this->assertInstanceOf(EchoResponse::class, $response);
     }
 
-    public function testShowsErrorIfExtensionFailedToInstall()
+    public function testShowsErrorIfExtensionFailedToInstall(): void
     {
         $tester = $this->createTester();
         $this->installer->requireExtensions([ self::EXAMPLE_EXTENSION_NAME ])->willThrow(new Exception('sorry'));

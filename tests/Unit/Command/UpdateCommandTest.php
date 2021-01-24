@@ -26,7 +26,7 @@ class UpdateCommandTest extends TestCase
         $this->tester = new CommandTester(new UpdateCommand($this->installer->reveal()));
     }
 
-    public function testItCallsTheUpdateer()
+    public function testItCallsTheUpdateer(): void
     {
         $this->installer->installForceUpdate()->shouldBeCalled();
 

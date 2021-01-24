@@ -61,11 +61,6 @@ parameters:
 			path: lib/Adapter/Composer/ComposerExtensionRepository.php
 
 		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Adapter\\\\Composer\\\\LazyComposerInstaller\\:\\:runInstall\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Adapter/Composer/LazyComposerInstaller.php
-
-		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Adapter\\\\Composer\\\\PackageExtensionFactory\\:\\:fromPackages\\(\\) has parameter \\$packages with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: lib/Adapter/Composer/PackageExtensionFactory.php
@@ -79,31 +74,6 @@ parameters:
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Adapter\\\\Composer\\\\PackageExtensionFactory\\:\\:extractDependencies\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: lib/Adapter/Composer/PackageExtensionFactory.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Adapter\\\\Composer\\\\PackageExtensionFactory\\:\\:assertPackageType\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Adapter/Composer/PackageExtensionFactory.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Adapter\\\\Composer\\\\PackageExtensionFactory\\:\\:assertHasExtensionClass\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Adapter/Composer/PackageExtensionFactory.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\InstallCommand\\:\\:configure\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Command/InstallCommand.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\ListCommand\\:\\:configure\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Command/ListCommand.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\RemoveCommand\\:\\:removeExtensions\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Command/RemoveCommand.php
 
 		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Command\\\\RemoveCommand\\:\\:removeExtensions\\(\\) has parameter \\$extensions with no value type specified in iterable type array\\.$#"
@@ -121,42 +91,12 @@ parameters:
 			path: lib/EventSubscriber/PostInstallSubscriber.php
 
 		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\EventSubscriber\\\\PostInstallSubscriber\\:\\:handlePostPackageInstall\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/EventSubscriber/PostInstallSubscriber.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\ExtensionManagerExtension\\:\\:registerCommands\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/ExtensionManagerExtension.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\ExtensionManagerExtension\\:\\:registerComposer\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/ExtensionManagerExtension.php
-
-		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\ExtensionManagerExtension\\:\\:repositoryFile\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: lib/ExtensionManagerExtension.php
 
 		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\ExtensionManagerExtension\\:\\:extensionRepositoryFile\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/ExtensionManagerExtension.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\ExtensionManagerExtension\\:\\:registerModel\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/ExtensionManagerExtension.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\ExtensionManagerExtension\\:\\:registerService\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/ExtensionManagerExtension.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\ExtensionManagerExtension\\:\\:registerRpc\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: lib/ExtensionManagerExtension.php
 
@@ -211,11 +151,6 @@ parameters:
 			path: lib/Model/Extension.php
 
 		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Model\\\\ExtensionFileGenerator\\:\\:writeExtensionList\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Model/ExtensionFileGenerator.php
-
-		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Model\\\\ExtensionRepository\\:\\:installedExtensions\\(\\) return type has no value type specified in iterable type Phpactor\\\\Extension\\\\ExtensionManager\\\\Model\\\\Extensions\\.$#"
 			count: 1
 			path: lib/Model/ExtensionRepository.php
@@ -266,11 +201,6 @@ parameters:
 			path: lib/Model/Extensions.php
 
 		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Model\\\\Extensions\\:\\:add\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Model/Extensions.php
-
-		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Model\\\\Extensions\\:\\:names\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: lib/Model/Extensions.php
@@ -279,11 +209,6 @@ parameters:
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Model\\\\Extensions\\:\\:primaries\\(\\) return type has no value type specified in iterable type Phpactor\\\\Extension\\\\ExtensionManager\\\\Model\\\\Extensions\\.$#"
 			count: 1
 			path: lib/Model/Extensions.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Rpc\\\\ExtensionInstallHandler\\:\\:configure\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Rpc/ExtensionInstallHandler.php
 
 		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Rpc\\\\ExtensionInstallHandler\\:\\:handle\\(\\) has no return typehint specified\\.$#"
@@ -306,11 +231,6 @@ parameters:
 			path: lib/Rpc/ExtensionInstallHandler.php
 
 		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Rpc\\\\ExtensionListHandler\\:\\:configure\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Rpc/ExtensionListHandler.php
-
-		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Rpc\\\\ExtensionListHandler\\:\\:handle\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: lib/Rpc/ExtensionListHandler.php
@@ -324,11 +244,6 @@ parameters:
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Rpc\\\\ExtensionListHandler\\:\\:formatState\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: lib/Rpc/ExtensionListHandler.php
-
-		-
-			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Rpc\\\\ExtensionRemoveHandler\\:\\:configure\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: lib/Rpc/ExtensionRemoveHandler.php
 
 		-
 			message: "#^Method Phpactor\\\\Extension\\\\ExtensionManager\\\\Rpc\\\\ExtensionRemoveHandler\\:\\:handle\\(\\) has no return typehint specified\\.$#"

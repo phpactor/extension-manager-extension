@@ -12,7 +12,7 @@ use Phpactor\Extension\Rpc\Test\HandlerTester;
 
 class ExtensionListHandlerTest extends TestCase
 {
-    public function testListsExtensions()
+    public function testListsExtensions(): void
     {
         $repository = $this->prophesize(ExtensionRepository::class);
         $repository->extensions()->willReturn(new Extensions([
@@ -24,10 +24,10 @@ class ExtensionListHandlerTest extends TestCase
         $response = $tester->handle('extension_list', []);
 
         $this->assertEquals(<<<'EOT'
-[✔] one                            One (dev-xxx)
-[✔] two                            Two (dev-yyy)
-[ ] three                          Two
-EOT
+            [✔] one                            One (dev-xxx)
+            [✔] two                            Two (dev-yyy)
+            [ ] three                          Two
+            EOT
         , $response->message());
     }
 }

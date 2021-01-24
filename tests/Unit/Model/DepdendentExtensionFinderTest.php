@@ -35,7 +35,7 @@ class DepdendentExtensionFinderTest extends TestCase
         $this->extension->name()->willReturn(self::EXAMPLE_PACKAGE);
     }
 
-    public function testReturnsEmptyRepositoryHasNoExtensions()
+    public function testReturnsEmptyRepositoryHasNoExtensions(): void
     {
         $this->repository->find(self::EXAMPLE_PACKAGE)->willReturn(
             $this->extension->reveal()
@@ -47,7 +47,7 @@ class DepdendentExtensionFinderTest extends TestCase
         $this->assertEmpty($dependants);
     }
 
-    public function testReturnsEmptyWhenNoDependentsDepend()
+    public function testReturnsEmptyWhenNoDependentsDepend(): void
     {
         $this->repository->find(self::EXAMPLE_PACKAGE)->willReturn(
             $this->extension->reveal()
@@ -62,7 +62,7 @@ class DepdendentExtensionFinderTest extends TestCase
         $this->assertEmpty($dependants);
     }
 
-    public function testReturnsDependentPackages()
+    public function testReturnsDependentPackages(): void
     {
         $this->repository->find(self::EXAMPLE_PACKAGE)->willReturn(
             $this->extension->reveal()
@@ -81,7 +81,7 @@ class DepdendentExtensionFinderTest extends TestCase
         $this->assertEquals('zog', $dependants['zog']->name());
     }
 
-    public function testReturnsDependenciesOfTheDependency()
+    public function testReturnsDependenciesOfTheDependency(): void
     {
         $this->repository->find(self::EXAMPLE_PACKAGE)->willReturn(
             $this->extension->reveal()
@@ -97,7 +97,7 @@ class DepdendentExtensionFinderTest extends TestCase
         $this->assertCount(2, $dependants);
     }
 
-    public function testWillNotSufferCircularDependencies()
+    public function testWillNotSufferCircularDependencies(): void
     {
         $this->repository->find(self::EXAMPLE_PACKAGE)->willReturn(
             $this->extension->reveal()

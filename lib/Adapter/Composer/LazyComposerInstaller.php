@@ -37,7 +37,7 @@ class LazyComposerInstaller implements Installer
         return $installer;
     }
 
-    private function runInstall(ComposerInstaller $installer)
+    private function runInstall(ComposerInstaller $installer): void
     {
         $installer->setDevMode(false);
 

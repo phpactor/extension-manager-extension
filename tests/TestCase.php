@@ -23,7 +23,7 @@ class TestCase extends PHPUnitTestCase
 //        $this->workspace->reset();
     }
 
-    public function loadProject(string $name, string $manifest)
+    public function loadProject(string $name, string $manifest): void
     {
         $projectWorkspace = Workspace::create($this->workspace->path($name));
         $projectWorkspace->reset();
