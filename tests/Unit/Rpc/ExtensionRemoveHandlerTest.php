@@ -25,14 +25,14 @@ class ExtensionRemoveHandlerTest extends TestCase
         $this->remover = $this->prophesize(RemoverService::class);
     }
 
-    public function testAsksForExtensionName()
+    public function testAsksForExtensionName(): void
     {
         $tester = $this->createTester();
         $response = $tester->handle('extension_remove', []);
         $this->assertInstanceOf(InputCallbackResponse::class, $response);
     }
 
-    public function testRemovesExtension()
+    public function testRemovesExtension(): void
     {
         $tester = $this->createTester();
         $this->remover->removeExtension(self::EXAMPLE_EXTENSION_NAME)->shouldBeCalled();
@@ -42,7 +42,7 @@ class ExtensionRemoveHandlerTest extends TestCase
         $this->assertInstanceOf(EchoResponse::class, $response);
     }
 
-    public function testShowsErrorIfExtensionFailedToBeRemoved()
+    public function testShowsErrorIfExtensionFailedToBeRemoved(): void
     {
         $tester = $this->createTester();
         $this->remover->removeExtension(self::EXAMPLE_EXTENSION_NAME)->willThrow(new Exception('sorry'));

@@ -22,7 +22,7 @@ class InstallCommand extends Command
         $this->installer = $installer;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setDescription('Install extensions');
         $this->addArgument('extension', InputArgument::OPTIONAL|InputArgument::IS_ARRAY);

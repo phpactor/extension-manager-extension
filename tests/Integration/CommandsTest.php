@@ -21,7 +21,7 @@ class CommandsTest extends IntegrationTestCase
         $this->setupEnvironment();
     }
 
-    public function testInstall()
+    public function testInstall(): void
     {
         [$exit, $out] = $this->runCommand([
             'command' => 'extension:install'
@@ -29,7 +29,7 @@ class CommandsTest extends IntegrationTestCase
         $this->assertEquals(0, $exit);
     }
 
-    public function testRemove()
+    public function testRemove(): void
     {
         [$exit, $out] = $this->runCommand([
             'command' => 'extension:remove',
@@ -38,7 +38,7 @@ class CommandsTest extends IntegrationTestCase
         $this->assertEquals(0, $exit);
     }
 
-    public function testList()
+    public function testList(): void
     {
         [$exit, $out] = $this->runCommand([
             'command' => 'extension:install',
@@ -54,7 +54,7 @@ class CommandsTest extends IntegrationTestCase
         $this->assertEquals(0, $exit);
     }
 
-    public function testUpdate()
+    public function testUpdate(): void
     {
         [$exit, $out] = $this->runCommand([
             'command' => 'extension:update',
@@ -75,20 +75,20 @@ class CommandsTest extends IntegrationTestCase
         return [$exit, $output->fetch()];
     }
 
-    private function setupEnvironment()
+    private function setupEnvironment(): void
     {
         $this->loadProject(
             'Extension',
             <<<'EOT'
-// File: composer.json
-{
-    "name": "test/extension",
-    "type": "phpactor-extension",
-    "extra": {
-        "phpactor.extension_class": "Foo"
-    }
-}
-EOT
+                // File: composer.json
+                {
+                    "name": "test/extension",
+                    "type": "phpactor-extension",
+                    "extra": {
+                        "phpactor.extension_class": "Foo"
+                    }
+                }
+                EOT
         );
 
         $this->container = $this->container([

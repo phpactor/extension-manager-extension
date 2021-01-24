@@ -53,7 +53,7 @@ class ExtensionFileGeneratorTest extends IntegrationTestCase
         $this->extension2->name()->willReturn('test_extension_2');
     }
 
-    public function testGenerate()
+    public function testGenerate(): void
     {
         $this->extension1->classNames()->willReturn([self::EXAMPLE_CLASS_NAME_1]);
         $this->extension2->classNames()->willReturn([self::EXAMPLE_CLASS_NAME_2]);
@@ -69,7 +69,7 @@ class ExtensionFileGeneratorTest extends IntegrationTestCase
         ], $extensions);
     }
 
-    public function testGeneratesNonExistingDirectory()
+    public function testGeneratesNonExistingDirectory(): void
     {
         $path = $this->workspace->path('Foo/Foobar/Bar/extensions.php');
         $generator = new ExtensionFileGenerator($path);

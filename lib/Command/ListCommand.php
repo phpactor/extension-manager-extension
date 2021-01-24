@@ -23,7 +23,7 @@ class ListCommand extends Command
         $this->lister = $lister;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setDescription('List extensions');
         $this->addOption('installed', null, InputOption::VALUE_NONE, 'Only show installed packages');

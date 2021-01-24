@@ -32,7 +32,7 @@ class ComposerExtensionConfigTest extends TestCase
         );
     }
 
-    public function testThrowsExceptionWithInvalidJson()
+    public function testThrowsExceptionWithInvalidJson(): void
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('Invalid JSON');
@@ -42,7 +42,7 @@ class ComposerExtensionConfigTest extends TestCase
         new ComposerExtensionConfig($this->path, 'one', 'two');
     }
 
-    public function testRequires()
+    public function testRequires(): void
     {
         $this->config->require('foo', 'bar');
         $this->config->write();
@@ -52,7 +52,7 @@ class ComposerExtensionConfigTest extends TestCase
         ], $this->render()['require']);
     }
 
-    public function testRevertsToOriginalConfig()
+    public function testRevertsToOriginalConfig(): void
     {
         $this->config->require('foo', 'bar');
         $this->config->write();
@@ -61,7 +61,7 @@ class ComposerExtensionConfigTest extends TestCase
         $this->assertTrue(array_intersect([], $this->render()) === []);
     }
 
-    public function testAddsRepositories()
+    public function testAddsRepositories(): void
     {
         $repository = [
             'type' => 'hello',
@@ -88,7 +88,7 @@ class ComposerExtensionConfigTest extends TestCase
         ], $this->render()['repositories']);
     }
 
-    public function testUnrequireRemovesRequireElementCompletely()
+    public function testUnrequireRemovesRequireElementCompletely(): void
     {
         $this->config->require('foo', 'bar');
         $this->config->revert();

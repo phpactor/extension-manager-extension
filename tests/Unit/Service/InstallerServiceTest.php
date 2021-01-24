@@ -76,7 +76,7 @@ class InstallerServiceTest extends TestCase
         $this->extension1 = $this->prophesize(Extension::class);
     }
 
-    public function testRequireExtensions()
+    public function testRequireExtensions(): void
     {
         $this->finder->findBestVersion('foobar')->willReturn('dev-foo');
         $this->config->require('foobar', 'dev-foo')->shouldBeCalled();
@@ -87,7 +87,7 @@ class InstallerServiceTest extends TestCase
         $this->service->requireExtensions(['foobar']);
     }
 
-    public function testRollsbackConfigOnError()
+    public function testRollsbackConfigOnError(): void
     {
         $this->finder->findBestVersion('foobar')->willReturn('dev-foo');
         $this->config->require('foobar', 'dev-foo')->shouldBeCalled();

@@ -24,7 +24,7 @@ class PackageExtensionFactoryTest extends TestCase
         $this->factory = new PackageExtensionFactory();
     }
 
-    public function testFromPackage()
+    public function testFromPackage(): void
     {
         $package = $this->createExamplePackage();
         $package->setType(PackageExtensionFactory::PACKAGE_TYPE);
@@ -39,7 +39,7 @@ class PackageExtensionFactoryTest extends TestCase
         $this->assertEquals([self::EXAMPLE_EXTENSION_CLASS], $extension->classNames());
     }
 
-    public function testExceptionOnInvalidPackageType()
+    public function testExceptionOnInvalidPackageType(): void
     {
         $this->expectException(InvalidExtensionPackage::class);
         $this->expectExceptionMessage('Package "foobar" has type "foo"');
@@ -50,7 +50,7 @@ class PackageExtensionFactoryTest extends TestCase
         $this->factory->fromPackage($package);
     }
 
-    public function testExceptionIfPackageIsMissingTheClassExtraKey()
+    public function testExceptionIfPackageIsMissingTheClassExtraKey(): void
     {
         $this->expectException(InvalidExtensionPackage::class);
         $this->expectExceptionMessage('Package "foobar" does not have');

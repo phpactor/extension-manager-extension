@@ -19,7 +19,7 @@ class ExtensionFileGenerator
     /**
      * @param Extensions<Extension> $extensions
      */
-    public function writeExtensionList(Extensions $extensions)
+    public function writeExtensionList(Extensions $extensions): void
     {
         $code = [
             '<?php',

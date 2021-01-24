@@ -59,7 +59,7 @@ class ExtensionManagerExtension implements Extension
     const PARAM_REPOSITORIES = 'extension_manager.repositories';
     const PARAM_QUIET = 'extension_manager.quiet';
 
-    public function configure(Resolver $resolver)
+    public function configure(Resolver $resolver): void
     {
         $resolver->setRequired([
             self::PARAM_EXTENSION_VENDOR_DIR,
@@ -93,7 +93,7 @@ class ExtensionManagerExtension implements Extension
         }
     }
 
-    private function registerCommands(ContainerBuilder $container)
+    private function registerCommands(ContainerBuilder $container): void
     {
         $container->register('extension_manager.command.install-extension', function (Container $container) {
             return new InstallCommand(
@@ -116,7 +116,7 @@ class ExtensionManagerExtension implements Extension
         }, [ ConsoleExtension::TAG_COMMAND => [ 'name' => 'extension:remove' ] ]);
     }
 
-    private function registerComposer(ContainerBuilder $container)
+    private function registerComposer(ContainerBuilder $container): void
     {
         $container->register('extension_manager.composer', function (Container $container) {
             $this->initializeComposer($container);
@@ -215,7 +215,7 @@ class ExtensionManagerExtension implements Extension
         ]);
     }
 
-    private function registerModel(ContainerBuilder $container)
+    private function registerModel(ContainerBuilder $container): void
     {
         $container->register('extension_manager.adapter.extension_config_loader', function (Container $container) {
             return new ComposerExtensionConfigLoader(
@@ -267,7 +267,7 @@ class ExtensionManagerExtension implements Extension
         return $composer;
     }
 
-    private function registerService(ContainerBuilder $container)
+    private function registerService(ContainerBuilder $container): void
     {
         $container->register('extension_manager.service.progress', function (Container $container) {
             $output = $this->isRpcCommand($container) || $container->getParameter(self::PARAM_QUIET)
@@ -319,7 +319,7 @@ class ExtensionManagerExtension implements Extension
         $config->write();
     }
 
-    private function registerRpc(ContainerBuilder $container)
+    private function registerRpc(ContainerBuilder $container): void
     {
         $container->register('extension_manager.rpc.handler.list', function (Container $container) {
             return new ExtensionListHandler($container->get('extension_manager.model.extension_repository'));

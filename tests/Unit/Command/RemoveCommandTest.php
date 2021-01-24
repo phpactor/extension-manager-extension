@@ -30,7 +30,7 @@ class RemoveCommandTest extends TestCase
         $this->tester = new CommandTester(new RemoveCommand($this->remover->reveal()));
     }
 
-    public function testRemovesAnExtension()
+    public function testRemovesAnExtension(): void
     {
         $this->remover->findDependentExtensions(['foo'])->willReturn(new Extensions([]));
         $this->remover->removeExtension('foo')->shouldBeCalled();
@@ -43,7 +43,7 @@ class RemoveCommandTest extends TestCase
         $this->assertEquals(0, $this->tester->getStatusCode());
     }
 
-    public function testRemovesAnExtensionAndDependentExtensions()
+    public function testRemovesAnExtensionAndDependentExtensions(): void
     {
         $this->remover->findDependentExtensions(['foo'])->willReturn(new Extensions([
             new Extension('bar', 'foo', ['class'], 'desc'),
@@ -63,7 +63,7 @@ class RemoveCommandTest extends TestCase
         $this->assertEquals(0, $this->tester->getStatusCode());
     }
 
-    public function testFailsIfAnyOfTheDependentPackagesArePrimary()
+    public function testFailsIfAnyOfTheDependentPackagesArePrimary(): void
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('primary exten');

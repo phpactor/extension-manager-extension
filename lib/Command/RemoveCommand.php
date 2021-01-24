@@ -47,7 +47,7 @@ class RemoveCommand extends Command
         return 0;
     }
 
-    private function removeExtensions(array $extensions, OutputInterface $output)
+    private function removeExtensions(array $extensions, OutputInterface $output): void
     {
         foreach ($extensions as $extension) {
             $output->writeln(sprintf('<info>Removing:</> %s', $extension));

@@ -46,7 +46,7 @@ class PackageExtensionFactory
         return $dependencies;
     }
 
-    private function assertPackageType(CompletePackageInterface $package)
+    private function assertPackageType(CompletePackageInterface $package): void
     {
         if ($package->getType() === self::PACKAGE_TYPE) {
             return;
@@ -60,7 +60,7 @@ class PackageExtensionFactory
         ));
     }
 
-    private function assertHasExtensionClass(CompletePackageInterface $package)
+    private function assertHasExtensionClass(CompletePackageInterface $package): void
     {
         $extra = $package->getExtra();
 

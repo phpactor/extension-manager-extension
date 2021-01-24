@@ -39,11 +39,6 @@ class Extensions implements IteratorAggregate, Countable
         return new ArrayIterator($this->extensions);
     }
 
-    private function add(Extension $extension)
-    {
-        $this->extensions[$extension->name()] = $extension;
-    }
-
     /**
      * {@inheritDoc}
      */
@@ -64,5 +59,10 @@ class Extensions implements IteratorAggregate, Countable
         return new Extensions(array_filter($this->extensions, function (Extension $extension) {
             return $extension->state()->isPrimary();
         }));
+    }
+
+    private function add(Extension $extension): void
+    {
+        $this->extensions[$extension->name()] = $extension;
     }
 }

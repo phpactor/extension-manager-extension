@@ -19,14 +19,14 @@ class ComposerVersionFinderTest extends IntegrationTestCase
         $this->setupEnvironment();
     }
 
-    public function testFindsLatestVersion()
+    public function testFindsLatestVersion(): void
     {
         $version = $this->finder->findBestVersion('test/extension');
 
         $this->assertEquals('dev-master', $version);
     }
 
-    public function testThrowsExceptionIfNoCandidatesFound()
+    public function testThrowsExceptionIfNoCandidatesFound(): void
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('Could not find suitable version for extension "test/no"');
@@ -34,20 +34,20 @@ class ComposerVersionFinderTest extends IntegrationTestCase
         $this->finder->findBestVersion('test/no');
     }
 
-    private function setupEnvironment()
+    private function setupEnvironment(): void
     {
         $this->loadProject(
             'Extension',
             <<<'EOT'
-// File: composer.json
-{
-    "name": "test/extension",
-    "type": "phpactor-extension",
-    "extra": {
-        "phpactor.extension_class": "Foo"
-    }
-}
-EOT
+                // File: composer.json
+                {
+                    "name": "test/extension",
+                    "type": "phpactor-extension",
+                    "extra": {
+                        "phpactor.extension_class": "Foo"
+                    }
+                }
+                EOT
         );
 
         /** @var InstallerService $installer */
